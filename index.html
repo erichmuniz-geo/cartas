@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#001F3A">
+  <meta name="description" content="Acervo móvel de cartas por idioma e ano, com extratos organizados.">
+  <title>Cartas & Extratos</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <img class="hero-image" src="assets/capa-cartas.jpg" alt="Capa em couro azul-marinho com emblema dourado Cartas & Extratos">
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <span class="eyebrow">ACERVO DIGITAL</span>
+      <h1>Cartas &amp; Extratos</h1>
+      <p>Correspondências organizadas por idioma, ano e arquivo.</p>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <nav class="tabs" aria-label="Seções do acervo">
+      <button class="tab" data-group="Português" aria-selected="true"><span class="tab-code">PT</span><span>Português</span></button>
+      <button class="tab" data-group="Español" aria-selected="false"><span class="tab-code">ES</span><span>Español</span></button>
+      <button class="tab" data-group="Extratos" aria-selected="false"><span class="tab-code">EX</span><span>Extratos</span></button>
+    </nav>
+
+    <section class="toolbar" aria-label="Pesquisa e navegação">
+      <div class="section-title-wrap">
+        <button id="backBtn" class="icon-btn hidden" type="button" aria-label="Voltar aos anos">←</button>
+        <div>
+          <p id="breadcrumb" class="breadcrumb">Português</p>
+          <h2 id="sectionTitle">Selecione um ano</h2>
+        </div>
+      </div>
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Pesquisar arquivo" autocomplete="off">
+      </label>
+    </section>
+
+    <section id="summary" class="summary" aria-live="polite"></section>
+    <section id="content" class="content" aria-live="polite"></section>
+  </main>
+
+  <dialog id="viewer" class="viewer">
+    <div class="viewer-card">
+      <div class="viewer-head">
+        <div>
+          <p id="viewerMeta" class="viewer-meta"></p>
+          <h3 id="viewerTitle"></h3>
+        </div>
+        <button id="closeViewer" class="close-btn" type="button" aria-label="Fechar">×</button>
+      </div>
+      <div id="viewerBody" class="viewer-body"></div>
+      <div class="viewer-actions">
+        <a id="openOriginal" class="btn secondary" target="_blank" rel="noopener">Abrir original</a>
+        <a id="downloadOriginal" class="btn primary" download>Baixar arquivo</a>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript>Ative o JavaScript para navegar pelo acervo.</noscript>
+  <script src="library-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
